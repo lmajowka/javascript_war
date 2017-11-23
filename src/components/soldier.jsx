@@ -1,23 +1,10 @@
 class Soldier extends React.Component {
 
-  constructor(){
-    super();
-
-    this.state = {
-      x: 100,
-      y: 100
-    }
-  }
-
-  move(event){
-    console.log(event);
-  }
-
   render() {
 
     let style = {
-      top: this.state.y + 'px',
-      left: this.state.x + 'px'
+      top: Movements.coords.y + 'px',
+      left: Movements.coords.x + 'px'
     }
 
     return (
@@ -26,7 +13,7 @@ class Soldier extends React.Component {
           *
         </div>
         <div>  
-           {this.props.name} ({this.state.x},{this.state.y})
+           {this.props.name} ({Movements.coords.x},{Movements.coords.y})
         </div>  
     </div>
     );

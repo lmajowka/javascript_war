@@ -1,19 +1,28 @@
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="battle_field.css">
 <link rel="stylesheet" type="text/css" href="soldier.css">
+<script src="movements.js"></script>
 
-<body onkeypress='soldier1.move(event)'>
+<body onkeypress='Movements.move(event)'>
   <div id="root"></div> 
 </body>  
 
 <script type="text/babel" src='soldier.jsx'>
 </script>
+<script type="text/babel" src='battle_field.jsx'>
+</script>
 
 <script type="text/babel">
-const soldier1 = <Soldier name="Sara Connor"/>;
-ReactDOM.render(
-  soldier1,
-  document.getElementById('root')
-);
+
+function renderBF(){
+  const battleField = <BattleField />;
+  ReactDOM.render(
+    battleField,
+    document.getElementById('root')
+  );
+}
+
+setInterval(renderBF, 10);
 </script>

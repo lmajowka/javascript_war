@@ -4,6 +4,7 @@ var path = require('path');
 
 app.use(express.static(__dirname + '/components'));
 app.use(express.static(__dirname + '/css'));
+app.use(express.static(__dirname + '/javascript'));
 
 let index = require('./routes/index');
 app.use('/', index);
