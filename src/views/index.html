@@ -1,20 +1,19 @@
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="soldier.css">
 
-<h1>
-  opa </h1>
-
+<body onkeypress='soldier1.move(event)'>
   <div id="root"></div> 
+</body>  
 
- <script type="text/babel" src='soldier.jsx'>
+<script type="text/babel" src='soldier.jsx'>
 </script>
 
 <script type="text/babel">
-const soldier1 = <Soldier name="Sara Connor" />;
+const soldier1 = <Soldier name="Sara Connor"/>;
 ReactDOM.render(
   soldier1,
   document.getElementById('root')
 );
-
 </script>

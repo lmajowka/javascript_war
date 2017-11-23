@@ -1,0 +1,8 @@
+.soldier{
+  position: absolute;
+}
+
+.soldier-body{
+  color: #F00;
+  font-size: 30px;
+}
