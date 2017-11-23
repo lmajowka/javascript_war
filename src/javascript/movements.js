@@ -5,6 +5,7 @@ class Movements {
     if (movement){
       this.coords.x += movement[0];
       this.coords.y += movement[1];
+      socket.emit('movement', { coords: this.coords });
     }
   }
 
