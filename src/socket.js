@@ -13,11 +13,11 @@ class Socket{
       });
 
       client.on('movement', function (data) {
-        console.log(Socket.soldiers);
-        console.log(data);
         let soldier = Soldier.findSoldierByName(client.name);
         soldier.x = data.coords.x;
         soldier.y = data.coords.y;
+        client.broadcast.emit('movement', Soldier.soldiers);
+        client.emit('movement', Soldier.soldiers);
       });
     });
   }

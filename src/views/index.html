@@ -33,4 +33,9 @@ setInterval(renderBF, 10);
   var socket = io.connect('http://localhost:3000');
   let name = location.search.match(/\?name=(.*)/)[1];
   socket.emit('join', name);
+  socket.on('movement', function(data){
+    soldiers = data;
+  });
+
+  var soldiers = [];
 </script>

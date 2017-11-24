@@ -3,8 +3,8 @@ class Soldier extends React.Component {
   render() {
 
     let style = {
-      top: Movements.coords.y + 'px',
-      left: Movements.coords.x + 'px'
+      top: this.props.y + 'px',
+      left: this.props.x + 'px'
     }
 
     return (
@@ -13,7 +13,7 @@ class Soldier extends React.Component {
           *
         </div>
         <div>  
-           {this.props.name} ({Movements.coords.x},{Movements.coords.y})
+           {this.props.name} ({this.props.x},{this.props.y})
         </div>  
     </div>
     );
