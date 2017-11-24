@@ -1,7 +1,7 @@
 class Soldier{
 
-  static findSoldierByName(name){
-    return this.soldiers.find(function(soldier){ if (soldier.name == name) return true});
+  constructor(name){
+    this.name = name;
   }
 
 }

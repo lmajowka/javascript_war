@@ -9,13 +9,15 @@ class Socket{
 
       client.on('join', function(name){
         client.name = name;
-        Soldier.soldiers.push(new Soldier(client.name));
+        client.soldier = new Soldier(client.name)
+        Soldier.soldiers.push(client.soldier);
       });
 
       client.on('movement', function (data) {
-        let soldier = Soldier.findSoldierByName(client.name);
-        soldier.x = data.coords.x;
-        soldier.y = data.coords.y;
+        if (client.soldier){
+          client.soldier.x = data.coords.x;
+          client.soldier.y = data.coords.y;
+        }
         client.broadcast.emit('movement', Soldier.soldiers);
         client.emit('movement', Soldier.soldiers);
       });
