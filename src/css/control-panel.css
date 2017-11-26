@@ -5,3 +5,11 @@
   position: fixed;
   bottom: 0;
 }
+
+.control-panel-menu-button{
+  padding:10px 0;
+  float:left;
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid #F00;
+}
