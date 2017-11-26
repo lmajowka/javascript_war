@@ -21,6 +21,12 @@ class Socket{
         client.broadcast.emit('movement', Soldier.soldiers);
         client.emit('movement', Soldier.soldiers);
       });
+
+      client.on('disconnect', function () {
+        let soldierindex = Soldier.soldiers.indexOf(client.soldier);
+        Soldier.soldiers.splice(soldierindex,1);
+      });
+
     });
   }
 
