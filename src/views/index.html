@@ -3,15 +3,19 @@
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 <link rel="stylesheet" type="text/css" href="battle_field.css">
 <link rel="stylesheet" type="text/css" href="soldier.css">
+<link rel="stylesheet" type="text/css" href="control-panel.css">
 <script src="movements.js"></script>
 
 <body onkeypress='Movements.move(event)'>
-  <div id="root"></div> 
+  <div id="root"></div>
+  <div id="root-cp"></div> 
 </body>  
 
 <script type="text/babel" src='soldier.jsx'>
 </script>
 <script type="text/babel" src='battle_field.jsx'>
+</script>
+<script type="text/babel" src='control_panel.jsx'>
 </script>
 
 <script type="text/babel">
@@ -23,6 +27,12 @@ function renderBF(){
     document.getElementById('root')
   );
 }
+
+  ReactDOM.render(
+    <ControlPanel />,
+    document.getElementById('root-cp')
+  );
+
 
 setInterval(renderBF, 10);
 </script>
