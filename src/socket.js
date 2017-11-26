@@ -1,4 +1,5 @@
 const Soldier = require('./soldier');
+const Combat = require('./combat');
 
 class Socket{
 
@@ -14,9 +15,11 @@ class Socket{
       });
 
       client.on('movement', function (data) {
-        if (client.soldier){
-          client.soldier.x = data.coords.x;
-          client.soldier.y = data.coords.y;
+        let soldier = client.soldier;
+        if (soldier){
+          soldier.x = data.coords.x;
+          soldier.y = data.coords.y;
+          Combat.checkColision(soldier);
         }
         client.broadcast.emit('movement', Soldier.soldiers);
         client.emit('movement', Soldier.soldiers);

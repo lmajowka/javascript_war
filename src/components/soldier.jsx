@@ -2,9 +2,6 @@ class Soldier extends React.Component {
 
   constructor(){
     super();
-    this.state = {
-      color: '#F00'
-    }
   }
 
 
@@ -12,15 +9,15 @@ class Soldier extends React.Component {
 
     let style = {
       top: this.props.y + 'px',
-      left: this.props.x + 'px'
+      left: this.props.x + 'px',
     }
 
     let color = {
-      color: this.state.color
+      color: this.props.inCombat ? '#F00' : '#000'
     }
 
     return (
-      <div style={style} class='soldier' onClick={this.onItemClick.bind(this)}>
+      <div style={style} class='soldier'>
         <div class='soldier-body' style={color}>
           *
         </div>
@@ -29,10 +26,6 @@ class Soldier extends React.Component {
         </div>  
     </div>
     );
-  }
-
-  onItemClick(){
-    this.setState({color: '#0F0'});
   }
 
 }

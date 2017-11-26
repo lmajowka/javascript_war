@@ -5,7 +5,7 @@ class BattleField extends React.Component {
     let soldiersComponents = [];
     
     for (let soldier of soldiers){
-       soldiersComponents.push(<Soldier name={soldier.name} x={soldier.x} y={soldier.y} />);
+       soldiersComponents.push(<Soldier name={soldier.name} x={soldier.x} y={soldier.y} inCombat={soldier.inCombat}/>);
     }
 
     return (
