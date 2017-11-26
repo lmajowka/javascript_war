@@ -33,8 +33,6 @@ function renderBF(){
     document.getElementById('root-cp')
   );
 
-
-setInterval(renderBF, 10);
 </script>
 
 
@@ -45,6 +43,7 @@ setInterval(renderBF, 10);
   socket.emit('join', name);
   socket.on('movement', function(data){
     soldiers = data;
+    renderBF();
   });
 
   var soldiers = [];
