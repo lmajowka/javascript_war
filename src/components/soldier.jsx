@@ -24,6 +24,7 @@ class Soldier extends React.Component {
         <div>  
            {this.props.name} 
         </div>  
+        <EnergyBar life={this.props.life}/>
     </div>
     );
   }
