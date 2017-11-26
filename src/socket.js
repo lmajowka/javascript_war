@@ -9,7 +9,7 @@ class Socket{
     io.on('connection', function (client) {
 
       client.on('join', function(name){
-        client.name = name;
+        client.name = decodeURI(name);
         client.soldier = new Soldier(client.name)
         Soldier.soldiers.push(client.soldier);
       });
@@ -34,8 +34,6 @@ class Socket{
   }
 
 }
-
-
 
 module.exports = Socket;
 
