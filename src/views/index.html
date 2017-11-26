@@ -48,5 +48,9 @@ function renderBF(){
     renderBF();
   });
 
+  socket.on('you_died', function(data){
+    alert('You died!');
+  });
+
   var soldiers = [];
 </script>

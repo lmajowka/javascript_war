@@ -12,6 +12,11 @@ class Soldier{
     }
   }
 
+  static removeSoldier(soldier){
+    let soldierindex = Soldier.soldiers.indexOf(soldier);
+    Soldier.soldiers.splice(soldierindex,1);
+  }
+
 }
 
 Soldier.soldiers = [];

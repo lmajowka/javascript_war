@@ -20,14 +20,18 @@ class Socket{
           soldier.x = data.coords.x;
           soldier.y = data.coords.y;
           Combat.checkColision(soldier);
+          if (soldier.life < 0){
+            Soldier.removeSoldier(soldier);
+            client.emit('you_died', {});
+          }
         }
         client.broadcast.emit('movement', Soldier.soldiers);
         client.emit('movement', Soldier.soldiers);
+        
       });
 
       client.on('disconnect', function () {
-        let soldierindex = Soldier.soldiers.indexOf(client.soldier);
-        Soldier.soldiers.splice(soldierindex,1);
+        Soldier.removeSoldier(client.soldier);
       });
 
     });
