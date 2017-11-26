@@ -13,7 +13,7 @@ class Soldier extends React.Component {
           *
         </div>
         <div>  
-           {this.props.name} ({this.props.x},{this.props.y})
+           {this.props.name} 
         </div>  
     </div>
     );
