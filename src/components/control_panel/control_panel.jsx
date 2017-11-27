@@ -15,16 +15,22 @@ class ControlPanel extends React.Component {
   render(){
 
     let panel = null;
+    let defenseActive = false;
+    let attackActive = false;
+
+
     if (this.state.mode == 'defense'){
       panel = <DefensePanel />
+      defenseActive = true;
     } else {
       panel = <AttackPanel />
+      attackActive = true;
     }
 
     return (
       <div id='control-panel'>
-        <MenuButton label='Defense' mode='defense' onClick={this._changeMode.bind(this)}/>
-        <MenuButton label='Attack' mode='attack' onClick={this._changeMode.bind(this)}/>
+        <MenuButton label='Defense' mode='defense' active={defenseActive} onClick={this._changeMode.bind(this)}/>
+        <MenuButton label='Attack' mode='attack' active={attackActive} onClick={this._changeMode.bind(this)}/>
         { panel }
       </div>
     );

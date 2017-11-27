@@ -11,5 +11,14 @@
   float:left;
   width: 50%;
   text-align: center;
-  border-bottom: 1px solid #F00;
+  border-bottom: 1px solid #1d0f0f;
+}
+
+.active{
+  background: #17bde8;
+  color: #FFF;
+}
+
+.panel{
+  padding: 10px 10px;
 }
