@@ -4,6 +4,7 @@ class Combat{
 
   static checkColision(soldier){
     const DISTANCE_THERSHOLD = 20;
+    let inCombat = false;
 
     for (let _soldier of Soldier.soldiers){
       if (_soldier != soldier){
@@ -11,14 +12,17 @@ class Combat{
         if (distance < DISTANCE_THERSHOLD){
           soldier.inCombat = true;
           _soldier.inCombat = true;
+          inCombat = true;
           this.calculateDamage(soldier, _soldier);
           this.calculateDamage(_soldier, soldier);
-        } else {
-          soldier.inCombat = false;
-          _soldier.inCombat = false;
         }
       }
     }
+
+    if (!inCombat){
+      soldier.inCombat = false;
+    }
+
   }
 
   static distance(x1,x2,y1,y2){
