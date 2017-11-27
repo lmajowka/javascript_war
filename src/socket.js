@@ -1,5 +1,6 @@
 const Soldier = require('./soldier');
 const Combat = require('./combat');
+const defenseFunctions = require('./defense_functions');
 
 class Socket{
 
@@ -12,6 +13,7 @@ class Socket{
         client.name = decodeURI(name);
         client.soldier = new Soldier(client.name)
         Soldier.soldiers.push(client.soldier);
+        client.emit('defense_functions', defenseFunctions.map((df) => df.toString()));
       });
 
       client.on('movement', function (data) {

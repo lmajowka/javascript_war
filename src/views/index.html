@@ -21,6 +21,8 @@
 </script>
 <script type="text/babel" src='control_panel/defense_panel.jsx'>
 </script>
+<script type="text/babel" src='control_panel/defense_function.jsx'>
+</script>
 <script type="text/babel" src='control_panel/attack_panel.jsx'>
 </script>
 <script type="text/babel" src='energy_bar.jsx'>
@@ -58,5 +60,10 @@ function renderBF(){
     alert('You died!');
   });
 
+  socket.on('defense_functions', function(data){
+    defenseFunctions = data;
+  });
+
   var soldiers = [];
+  var defenseFunctions = [];
 </script>
